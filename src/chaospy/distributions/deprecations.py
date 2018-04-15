@@ -5,10 +5,6 @@ This modules provides a wrapper with documentation for the dist.cores module.
 """
 import logging
 from functools import wraps
-import numpy
-from scipy.stats import gaussian_kde
-
-from . import collection
 
 
 def deprecation_warning(func):
@@ -35,6 +31,7 @@ def Alpha(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scale Parameter
         shift (float, Dist) : Location of lower threshold
     """
+    from . import collection
     return collection.Alpha(shape, scale, shift)
 
 
@@ -47,6 +44,7 @@ def Anglit(loc=0, scale=1):
         loc (float, Dist) : Location parameter
         scale (float, Dist) : Scaling parameter
     """
+    from . import collection
     return collection.Anglit(loc, scale)
 
 
@@ -63,6 +61,7 @@ default non-generalized case.
     up : float, Dist
         Upper threshold
     """
+    from . import collection
     return collection.ArcSinus(shape, lo, up)
 
 
@@ -89,6 +88,7 @@ def Beta(a, b, lo=0, up=1):
         >>> print(f.mom(1))
         2.5
     """
+    from . import collection
     return collection.Beta(a, b, lo, up)
 
 
@@ -102,6 +102,7 @@ def Bradford(shape=1, lo=0, up=1):
         lo (float, Dist) : Location of lower threshold
         up (float, Dist) : Location of upper threshold
     """
+    from . import collection
     return collection.Bradford(shape, lo, up)
 
 
@@ -116,6 +117,7 @@ def Burr(c=1, d=1, loc=0, scale=1):
         loc (float, Dist) : Location parameter
         scale (float, Dist) : Scaling parameter
     """
+    from . import collection
     return collection.Burr(c, d, loc, scale)
 
 
@@ -128,6 +130,7 @@ def Cauchy(loc=0, scale=1):
         loc (float, Dist) : Location parameter
         scale (float, Dist) : Scaling parameter
     """
+    from . import collection
     return collection.Cauchy(loc, scale)
 
 
@@ -141,6 +144,7 @@ def Chi(df=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Chi(df, scale, shift)
 
 
@@ -155,6 +159,7 @@ def Chisquard(df=1, scale=1, shift=0, nc=0):
         shift (float, Dist) : Location parameter
         nc (float, Dist) : Non-centrality parameter
     """
+    from . import collection
     return collection.ChiSquard(df, scale, shift, nc)
 
 
@@ -168,6 +173,7 @@ def Dbl_gamma(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.DoubleGamma(shape, scale, shift)
 
 
@@ -181,6 +187,7 @@ def Dbl_weibull(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.DoubleWeibull(shape, scale, shift)
 
 
@@ -205,6 +212,7 @@ def Exponential(scale=1, shift=0):
         >>> print(f.mom(1))
         1.0
     """
+    from . import collection
     return collection.Exponential(scale, shift)
 
 
@@ -221,6 +229,7 @@ def Exponpow(shape=0, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.ExponentialPower(shape, scale, shift)
 
 
@@ -235,6 +244,7 @@ def Exponweibull(a=1, c=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.ExponentialWeibull(a, c, scale, shift)
 
 
@@ -250,6 +260,7 @@ def F(n=1, m=1, scale=1, shift=0, nc=0):
         shift (float, Dist) : Location parameter
         nc (float, Dist) : Non-centrality parameter
     """
+    from . import collection
     return collection.F(n, m, scale, shift, nc)
 
 
@@ -263,6 +274,7 @@ def Fatiguelife(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.FatigueLife(shape, scale, shift)
 
 
@@ -276,6 +288,7 @@ def Fisk(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Fisk(shape, scale, shift)
 
 
@@ -289,6 +302,7 @@ def Foldcauchy(shape=0, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.FoldCauchy(shape, scale, shift)
 
 
@@ -302,6 +316,7 @@ def Foldnormal(mu=0, sigma=1, loc=0):
         sigma (float, Dist) : Scaling parameter (in both normal and fold)
         loc (float, Dist) : Location of fold
     """
+    from . import collection
     return collection.FoldNormal(mu, sigma, loc)
 
 
@@ -315,6 +330,7 @@ def Frechet(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Frechet(shape, scale, shift)
 
 
@@ -342,6 +358,7 @@ def Gamma(shape=1, scale=1, shift=0):
         >>> print(f.mom(1))
         1.0
     """
+    from . import collection
     return collection.Gamma(shape, scale, shift)
 
 
@@ -364,6 +381,7 @@ def Genexpon(a=1, b=1, c=1, scale=1, shift=0):
         "The Exponential Distribution: Theory, Methods and Applications",
         N. Balakrishnan, Asit P. Basu.
     """
+    from . import collection
     return collection.GeneralizedExponential(a, b, c, scale, shift)
 
 
@@ -378,6 +396,7 @@ def Genextreme(shape=0, scale=1, loc=0):
         scale (float, Dist) : Scaling parameter
         loc (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.GeneralizedExtreme(shape, scale, loc)
 
 
@@ -392,6 +411,7 @@ def Gengamma(shape1, shape2, scale, shift):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.GeneralizedGamma(shape1, shape2, scale, shift)
 
 
@@ -405,6 +425,7 @@ def Genhalflogistic(shape, scale, shift):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.GeneralizedHalfLogistic(shape, scale, shift)
 
 
@@ -419,6 +440,7 @@ def Gilbrat(scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Gilbrat(scale, shift)
 
 
@@ -432,6 +454,7 @@ def Gompertz(shape, scale, shift):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Gompertz(shape, scale, shift)
 
 
@@ -444,6 +467,7 @@ def Logweibul(scale=1, loc=0):
         scale (float, Dist) : Scaling parameter
         loc (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.LogWeibull(scale, loc)
 
 
@@ -456,6 +480,7 @@ def Hypgeosec(loc=0, scale=1):
         loc (float, Dist) : Location parameter
         scale (float, Dist) : Scale parameter
     """
+    from . import collection
     return collection.HyperbolicSecant(loc, scale)
 
 
@@ -470,6 +495,7 @@ def Kumaraswamy(a, b, lo=0, up=1):
         lo (float, Dist) : Lower threshold
         up (float, Dist) : Upper threshold
     """
+    from . import collection
     return collection.Kumaraswamy(a, b, lo, up)
 
 
@@ -495,6 +521,7 @@ def Laplace(mu=0, scale=1):
         >>> print(f.mom(1))
         2.0
     """
+    from . import collection
     return collection.Laplace(mu, scale)
 
 
@@ -507,6 +534,7 @@ def Levy(loc=0, scale=1):
         loc (float, Dist) : Location parameter
         scale (float, Dist) : Scaling parameter
     """
+    from . import collection
     return collection.Levy(loc, scale)
 
 
@@ -520,6 +548,7 @@ def Loggamma(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.LogGamma(shape, scale, shift)
 
 
@@ -533,6 +562,7 @@ def Logistic(loc=0, scale=1, skew=1):
     scale (float, Dist) : Scale parameter
     skew (float, Dist) : Shape parameter
     """
+    from . import collection
     return collection.Logistic(loc, scale, skew)
 
 
@@ -546,6 +576,7 @@ def Loglaplace(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.LogLaplace(shape, scale, shift)
 
 
@@ -573,6 +604,7 @@ def Lognormal(mu=0, sigma=1, shift=0, scale=1):
         >>> print(numpy.around(f.mom(1), 4))
         1.6487
     """
+    from . import collection
     return collection.LogNormal(mu, sigma, shift, scale)
 
 
@@ -587,6 +619,7 @@ def Loguniform(lo=0, up=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.LogUniform(lo, up, scale, shift)
 
 
@@ -600,6 +633,7 @@ def Maxwell(scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Maxwell(scale, shift)
 
 
@@ -614,6 +648,7 @@ def Mielke(kappa=1, expo=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Mielke(kappa, expo, scale, shift)
 
 
@@ -627,6 +662,7 @@ def MvLognormal(loc=[0,0], scale=[[1,.5],[.5,1]]):
         scale (float, Dist) : Covariance matrix or variance vector if scale is
                 a 1-d vector.
     """
+    from . import collection
     return collection.MvLognormal(loc, scale)
 
 
@@ -654,6 +690,7 @@ def MvNormal(loc=[0,0], scale=[[1,.5],[.5,1]]):
         >>> print(numpy.around(f.mom((1,1)), 4))
         0.5
     """
+    from . import collection
     return collection.MvNormal(loc, scale)
 
 
@@ -665,6 +702,7 @@ def MvStudent_t(df=1, loc=[0,0], scale=[[1,.5],[.5,1]]):
         loc (array_like, Dist) : Location parameter
         scale (array_like) : Covariance matrix
     """
+    from . import collection
     return collection.MvStudentT(df, loc, scale)
 
 
@@ -678,6 +716,7 @@ def Nakagami(shape=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Nakagami(shape, scale, shift)
 
 
@@ -693,6 +732,7 @@ def Pareto1(shape=1, scale=1, loc=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Pareto1(shape, scale, loc)
 
 
@@ -710,6 +750,7 @@ def Pareto2(shape=1, scale=1, loc=0):
         scale (float, Dist) : Scaling parameter
         loc (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Pareto2(shape, scale, loc)
 
 
@@ -723,6 +764,7 @@ def Powerlaw(shape=1, lo=0, up=1):
         lo (float, Dist) : Location of lower threshold
         up (float, Dist) : Location of upper threshold
     """
+    from . import collection
     return collection.PowerLaw(shape, lo, up)
 
 
@@ -739,6 +781,7 @@ def Powerlognormal(shape=1, mu=0, sigma=1, shift=0, scale=1):
         shift (float, Dist) : Location parameter
         scale (float, Dist) : Scaling parameter. Overlap with mu in scale**mu
     """
+    from . import collection
     return collection.PowerLogNormal(shape, mu, sigma, shift, scale)
 
 
@@ -752,6 +795,7 @@ def Powernorm(shape=1, mu=0, scale=1):
         mu (float, Dist) : Mean of the normal distribution
         scale (float, Dist) : Standard deviation of the normal distribution
     """
+    from . import collection
     return collection.PowerNormal(shape, mu, scale)
 
 
@@ -764,6 +808,7 @@ def Raised_cosine(loc=0, scale=1):
         loc (float, Dist) : Location parameter
         scale (float, Dist) : Scale parameter
     """
+    from . import collection
     return collection.RaisedCosine(loc, scale)
 
 
@@ -776,6 +821,7 @@ def Rayleigh(scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Rayleigh(scale, shift)
 
 
@@ -788,6 +834,7 @@ def Reciprocal(lo=1, up=2):
         lo (float, Dist) : Location of lower threshold
         up (float, Dist) : Location of upper threshold
     """
+    from . import collection
     return collection.Reciprocal(lo, up)
 
 
@@ -802,6 +849,7 @@ def Student_t(df, loc=0, scale=1, nc=0):
         scale (float, Dist) : Scale parameter
         nc (flat, Dist) : Non-centrality parameter
     """
+    from . import collection
     return collection.StudentT(df, loc, scale, nc)
 
 
@@ -829,6 +877,7 @@ def Triangle(lo, mid, up):
         >>> print(numpy.around(f.mom(1), 4))
         3.0
     """
+    from . import collection
     return collection.Triangle(lo, mid, up)
 
 
@@ -842,6 +891,7 @@ def Truncexpon(up=1, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter in the exponential distribution
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.TruncExponential(up, scale, shift)
 
 
@@ -856,6 +906,7 @@ def Truncnorm(lo=-1, up=1, mu=0, sigma=1):
         mu (float, Dist) : Mean of normal distribution
         sigma (float, Dist) : Standard deviation of normal distribution
     """
+    from . import collection
     return collection.TruncNormal(lo, up, mu, sigma)
 
 
@@ -869,6 +920,7 @@ def Tukeylambda(shape=0, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.TukeyLambda(shape, scale, shift)
 
 
@@ -883,6 +935,7 @@ def Wald(mu=0, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.Wald(mu, scale, shift)
 
 
@@ -908,6 +961,7 @@ def Weibull(shape=1, scale=1, shift=0):
         >>> print(numpy.around(f.mom(1), 4))
         0.8862
     """
+    from . import collection
     return collection.Weibull(shape, scale, shift)
 
 
@@ -933,6 +987,7 @@ def Wrapcauchy(shape=0.5, scale=1, shift=0):
         scale (float, Dist) : Scaling parameter
         shift (float, Dist) : Location parameter
     """
+    from . import collection
     return collection.WrappedCauchy(shape, scale, shift)
 
 
@@ -950,4 +1005,5 @@ def SampleDist(samples, lo=None, up=None):
         lo (float) : Location of lower threshold
         up (float) : Location of upper threshold
     """
+    from . import collection
     return collection.SampleDist(samples, lo, up)
