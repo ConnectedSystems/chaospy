@@ -5,6 +5,8 @@ Uncertainty Quantifican Toolbox
 This module contains tools for performing uncertainty
 quantification of models.
 """
+import logging
+import os
 
 import chaospy.bertran
 import chaospy.chol
@@ -25,3 +27,5 @@ from chaospy.quad import *
 from chaospy.saltelli import *
 from chaospy.descriptives import *
 from chaospy.regression import *
+
+logging.basicConfig(level=logging.INFO, filename=os.devnull, filemode="w")
